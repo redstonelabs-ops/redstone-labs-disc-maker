@@ -87,7 +87,7 @@ main {
 
 .tab-button {
     flex: 1;
-    min-width: 1px;
+    min-width: 100px;
 
     padding: 12px;
 
