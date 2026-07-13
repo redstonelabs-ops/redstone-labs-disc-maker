@@ -1,0 +1,386 @@
+/* ===== GENERAL ===== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* ===== CABECERA ===== */
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-bottom: 2px solid #444;
+    color: red;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* ===== CONTENIDO ===== */
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== NOMBRE ===== */
+
+.student-section {
+    margin-bottom: 20px;
+}
+
+.student-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.student-section input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* ===== VISTA PREVIA ===== */
+
+.preview-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.preview-section h2 {
+    margin-bottom: 15px;
+}
+
+#previewCanvas {
+    background-color: #1e1e1e;
+    border: 2px solid #1e1e1e;
+    border-radius: 12px;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* ===== PESTAÑAS ===== */
+
+.tabs-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    flex: 1;
+    min-width: 100px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #333;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab-button:hover {
+    background-color: #444;
+}
+
+.tab-button.active {
+    background-color: #4CAF50;
+}
+
+/* ===== OPCIONES ===== */
+
+#optionsContainer {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(140px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+/* Tarjeta de opción */
+
+.option-card {
+    background-color: #2d2d2d;
+
+    border: 2px solid #444;
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.option-card:hover {
+    transform: scale(1.03);
+    border-color: #666;
+}
+
+.option-card.selected {
+    border-color: #4CAF50;
+}
+
+/* Miniatura */
+
+.option-preview {
+    width: 100%;
+    aspect-ratio: 1;
+
+    background-color: #1a1a1a;
+
+    border-radius: 8px;
+
+    margin-bottom: 10px;
+}
+
+/* Nombre */
+
+.option-name {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ===== EXPORTAR ===== */
+
+.export-section {
+    text-align: center;
+}
+
+#exportButton {
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #4CAF50;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#exportButton:hover {
+    background-color: #43a047;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
+    .tabs-section {
+        flex-direction: column;
+    }
+
+    #previewCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/* ===== MODOS DE VISUALIZACIÓN ===== */
+
+.view-mode-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    flex-wrap: wrap;
+}
+
+.view-mode {
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #333;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.view-mode:hover {
+
+    background-color: #444;
+}
+
+.view-mode.active {
+
+    background-color: #4CAF50;
+}
+.preview-layout {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+#selectionSummary {
+
+    min-width: 180px;
+    padding: 15px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    text-align: left;
+    margin-top: 135px;
+}
+
+#selectionSummary h3 {
+
+    margin-top: 0;
+}
+
+.pack-section {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+.pack-button {
+
+    padding: 8px 16px;
+    border: 2px solid #444;
+    border-radius: 6px;
+    background: #232222;
+    cursor: pointer;
+    transition: 0.15s;
+    color: white;
+}
+
+.theme-filter-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+.pack-button.active {
+
+    background: #38ab3c;
+
+    color: white;
+}
+
+.modal-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.modal-overlay.show {
+
+    display: flex;
+}
+
+.modal-box {
+
+    background: #444;
+
+    width: 350px;
+
+    padding: 24px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    text-align: center;
+}
+
+.modal-box h2 {
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    color: #c62828;
+}
+
+.modal-box p {
+
+    margin-bottom: 20px;
+}
+
+.modal-box button {
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1976d2;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.modal-box button:hover {
+
+    background: #1565c0;
+}

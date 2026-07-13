@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redstone Labs Disc Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Redstone Labs Disc Maker</h1>
+    </header>
+
+    <main>
+
+        <!-- Nombre del alumno -->
+        <section class="student-section">
+            <label for="studentName">Nombre del alumno</label>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Nombre Apellido">
+        </section>
+
+        <!-- Vista previa -->
+        <section class="preview-section">
+
+            <h2>Vista previa</h2>
+
+            <div class="view-mode-section">
+
+                <button class="view-mode active" data-view="disc">
+                    Disco
+                </button>
+
+                <button class="view-mode" data-view="minecraft">
+                    Minecraft
+                </button>
+
+            </div>
+
+            <div class="preview-layout">
+
+                <canvas
+                    id="previewCanvas"
+                    width="600"
+                    height="400">
+                </canvas>
+
+                <div id="selectionSummary">
+
+                    <h3>Selección actual</h3>
+
+                    <p>
+                        <strong>Borde:</strong>
+                        <span id="selectedBorderName">
+                            Ninguno
+                        </span>
+                    </p>
+            
+                    <p>
+                        <strong>Interior:</strong>
+                        <span id="selectedInteriorName">
+                            Ninguno
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Centro:</strong>
+                        <span id="selectedCenterName">
+                            Ninguno
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Detalle:</strong>
+                        <span id="selectedDetailName">
+                            Ninguno
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Pestañas -->
+        <section class="tabs-section">
+
+            <button class="tab-button active" data-tab="bordes">
+                Bordes
+            </button>
+
+            <button class="tab-button" data-tab="interiores">
+                Interiores
+            </button>
+
+            <button class="tab-button" data-tab="centros">
+                Centros
+            </button>
+
+            <button class="tab-button" data-tab="detalles">
+                Detalles
+            </button>
+
+        </section>
+
+        <div class="theme-filter-container">
+            <section
+                id="packFilters"
+                class="pack-section">
+            </section>
+
+        </div>
+
+        <!-- Opciones -->
+        <section id="optionsContainer">
+
+            <!-- Aquí aparecerán los bordes,
+                 interiores, centros y detalles -->
+
+        </section>
+
+        <!-- Exportar -->
+        <section class="export-section">
+
+            <button id="exportButton">
+                Exportar ZIP
+            </button>
+
+        </section>
+
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <h2 id="modalTitle">
+                Atención
+            </h2>
+
+            <p id="modalMessage">
+                Mensaje
+            </p>
+
+            <button id="modalButton">
+                Aceptar
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="libs/jszip.min.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
